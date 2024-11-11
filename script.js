@@ -36,30 +36,29 @@ const condition1 =
     seventh.innerHTML == "X") ||
   (fifth.innerHTML == "X" && fifth.innerHTML == "X" && ninth.innerHTML == "X");
 
-
-const condition2 =
-  (first.innerHTML == "0" &&
-    second.innerHTML == "0" &&
-    third.innerHTML == "0") ||
-  (fourth.innerHTML == "0" &&
-    fifth.innerHTML == "0" &&
-    sixth.innerHTML == "0") ||
-  (seventh.innerHTML == "X" &&
-    eighth.innerHTML == "0" &&
-    ninth.innerHTML == "0") ||
-  (first.innerHTML == "0" &&
-    fourth.innerHTML == "0" &&
-    seventh.innerHTML == "0") ||
-  (second.innerHTML == "0" &&
-    fifth.innerHTML == "0" &&
-    eighth.innerHTML == "0") ||
-  (third.innerHTML == "0" &&
-    sixth.innerHTML == "0" &&
-    ninth.innerHTML == "0") ||
-  (third.innerHTML == "0" &&
-    fifth.innerHTML == "0" &&
-    seventh.innerHTML == "0") ||
-  (fifth.innerHTML == "0" && fifth.innerHTML == "X" && ninth.innerHTML == "0");
+const condition2 = (first.innerHTML == "0" &&
+  second.innerHTML == "0" &&
+  third.innerHTML == "0") ||
+(fourth.innerHTML == "0" &&
+  fifth.innerHTML == "0" &&
+  sixth.innerHTML == "0") ||
+(seventh.innerHTML == "X" &&
+  eighth.innerHTML == "0" &&
+  ninth.innerHTML == "0") ||
+(first.innerHTML == "0" &&
+  fourth.innerHTML == "0" &&
+  seventh.innerHTML == "0") ||
+(second.innerHTML == "0" &&
+  fifth.innerHTML == "0" &&
+  eighth.innerHTML == "0") ||
+(third.innerHTML == "0" &&
+  sixth.innerHTML == "0" &&
+  ninth.innerHTML == "0") ||
+(third.innerHTML == "0" &&
+  fifth.innerHTML == "0" &&
+  seventh.innerHTML == "0") ||
+(fifth.innerHTML == "0" && fifth.innerHTML == "X" && ninth.innerHTML == "0");
+  
 
 let turn = 0;
 
@@ -80,7 +79,28 @@ function write(e) {
 }
 
 function check() {
-  if (condition1 == true) {
+  if ((first.innerHTML == "X" &&
+    second.innerHTML == "X" &&
+    third.innerHTML == "X") ||
+  (fourth.innerHTML == "X" &&
+    fifth.innerHTML == "X" &&
+    sixth.innerHTML == "X") ||
+  (seventh.innerHTML == "X" &&
+    eighth.innerHTML == "X" &&
+    ninth.innerHTML == "X") ||
+  (first.innerHTML == "X" &&
+    fourth.innerHTML == "X" &&
+    seventh.innerHTML == "X") ||
+  (second.innerHTML == "X" &&
+    fifth.innerHTML == "X" &&
+    eighth.innerHTML == "X") ||
+  (third.innerHTML == "X" &&
+    sixth.innerHTML == "X" &&
+    ninth.innerHTML == "X") ||
+  (third.innerHTML == "X" &&
+    fifth.innerHTML == "X" &&
+    seventh.innerHTML == "X") ||
+  (fifth.innerHTML == "X" && fifth.innerHTML == "X" && ninth.innerHTML == "X")) {
     info.innerText = "Game Over !";
     result.innerHTML = "X WON";
     textdiv.forEach((button) => {
@@ -88,20 +108,54 @@ function check() {
     });
   }
 
-  if (condition1 == false && condition2 == false && first.innerHTML != '' && second.innerHTML != '' && third.innerHTML != '' && fourth.innerHTML != '' && fifth.innerHTML != '' && sixth.innerHTML != '' && seventh.innerHTML != '' && eighth.innerHTML != '' && ninth.innerHTML != '' ) {
-    result.innerText = "It's a TIE !"
-    
+  if (
+    condition1 == false &&
+    condition2 == false &&
+    first.innerHTML != "" &&
+    second.innerHTML != "" &&
+    third.innerHTML != "" &&
+    fourth.innerHTML != "" &&
+    fifth.innerHTML != "" &&
+    sixth.innerHTML != "" &&
+    seventh.innerHTML != "" &&
+    eighth.innerHTML != "" &&
+    ninth.innerHTML != ""
+  ) {
+    result.innerText = "It's a TIE !";
   } 
   
-  else if (condition2 == true) {
+  
+  else if (
+    first.innerHTML == "0" &&
+    second.innerHTML == "0" &&
+    third.innerHTML == "0" ||
+    fourth.innerHTML == "0" &&
+    fifth.innerHTML == "0" &&
+    sixth.innerHTML == "0" ||
+    seventh.innerHTML == "X" &&
+    eighth.innerHTML == "0" &&
+    ninth.innerHTML == "0" ||
+    first.innerHTML == "0" &&
+    fourth.innerHTML == "0" &&
+    seventh.innerHTML == "0" ||
+    second.innerHTML == "0" &&
+    fifth.innerHTML == "0" &&
+    eighth.innerHTML == "0" ||
+    third.innerHTML == "0" &&
+    sixth.innerHTML == "0" &&
+    ninth.innerHTML == "0" ||
+    third.innerHTML == "0" &&
+    fifth.innerHTML == "0" &&
+    seventh.innerHTML == "0" ||
+    first.innerHTML == "0" && 
+    fifth.innerHTML == "X" && 
+    ninth.innerHTML == "0") {
     info.innerText = "Game Over !";
     result.innerHTML = "0 WON";
     textdiv.forEach((button) => {
       button.removeEventListener("click", write, false);
     });
   }
-
- 
 }
 
 textdiv.forEach((button) => {
