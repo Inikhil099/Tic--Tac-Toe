@@ -101,9 +101,7 @@ function check() {
     });
   }
 
-  // else{
-  //     result.innerText = "It's a TIE"
-  // }
+ 
 }
 
 textdiv.forEach((button) => {
@@ -113,7 +111,3 @@ textdiv.forEach((button) => {
 reset.addEventListener("click", () => {
   window.location.reload();
 });
-
-// setTimeout(() => {
-//     result.innerText = "its a tie"
-// }, 0);
